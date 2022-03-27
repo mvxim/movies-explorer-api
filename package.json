@@ -4,8 +4,8 @@
     "email": "donika.maxim@gmail.com",
     "url": "https://github.com/mvxim"
   },
-  "name": "Дипломный проект BeatFilm Movie'",
-  "description": "SPA, подключенное к API проекта BeatFilm, для поиска и сохранения понравившихся фильмов",
+  "name": "movies-explorer-api",
+  "description": "Бэкенд дипломного проекта. Управляет авторизацией. Сохраняет понравившиеся фильмы.",
   "version": "0.1.0",
   "homepage": ".",
   "private": true,
@@ -13,7 +13,7 @@
   "scripts": {
     "dev": "nodemon app.js",
     "start": "node app.js",
-    "lint": "npx eslint ."
+    "lint": "npx eslint . --fix"
   },
   "repository": {
     "type": "git",
