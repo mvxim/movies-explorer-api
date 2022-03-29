@@ -13,8 +13,8 @@ const { NODE_ENV, JWT_SECRET } = process.env;
 const createUser = async (req, res, next) => {
   try {
     const { email, password, name } = req.body;
-    if (!email && !password) {
-      throw new BadRequestError('Для регистрации нужен имейл и пароль');
+    if (!email && !password && !name) {
+      throw new BadRequestError('Для регистрации нужен имейл, пароль и имя');
     }
     const hashedPass = await bcrypt.hash(password, SALT_ROUNDS);
 

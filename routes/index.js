@@ -1,4 +1,5 @@
 const express = require('express');
+const { celebrate } = require('celebrate');
 const usersRouter = require('./userRouter');
 const moviesRouter = require('./moviesRouter');
 const {
@@ -8,6 +9,10 @@ const {
 } = require('../controllers/users');
 const auth = require('../middlewares/auth');
 const NotFoundError = require('../errors/NotFoundError');
+const {
+  joiSignUpScheme,
+  joiSignInScheme,
+} = require('../utils/validation');
 
 const router = express.Router();
 
@@ -17,8 +22,8 @@ router.get('/crash-test', () => {
   }, 0);
 });
 
-router.post('/signup', express.json(), createUser);
-router.post('/signin', express.json(), login);
+router.post('/signup', express.json(), celebrate(joiSignUpScheme), createUser);
+router.post('/signin', express.json(), celebrate(joiSignInScheme), login);
 
 router.use(auth);
 router.use('/users', usersRouter);
