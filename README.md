@@ -18,8 +18,9 @@ POST, `/movies`
 * удаляет сохранённый фильм по id:  
 DELETE, `/movies/_id`
 
-Фронтенд: [https://github.com/mvxim/movies-explorer-frontend](https://github.com/mvxim/movies-explorer-frontend) <br>
+Репозиторий с фронтендом: [https://github.com/mvxim/movies-explorer-frontend](https://github.com/mvxim/movies-explorer-frontend) <br>
 
-Деплой проекта на Яндекс
-Облаке: [https://mvxim.nomoredomains.work](https://mvxim.nomoredomains.work) <br>
-IP: 51.250.16.170
+###Деплой проекта на Яндекс Облаке:  
+IP: 51.250.16.170  
+Фронт: [https://mvxim.nomoredomains.work](https://mvxim.nomoredomains.work)  
+Бэк: [https://api.mvxim.nomoredomains.work](https://api.mvxim.nomoredomains.work)<br>
