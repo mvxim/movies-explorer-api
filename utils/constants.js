@@ -2,7 +2,7 @@ const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 
 const SALT_ROUNDS = 10;
 
-const { PORT = 3000 } = process.env;
+const { PORT = 3000, MONGO_SERVER } = process.env;
 
 const ALLOWED_CORS = [
   'https://mvxim.nomoredomains.work',
@@ -20,4 +20,5 @@ module.exports = {
   SALT_ROUNDS,
   PORT,
   ALLOWED_CORS,
+  MONGO_SERVER,
 };

@@ -22,10 +22,7 @@ const createUser = async (req, res, next) => {
       email, password: hashedPass, name,
     });
     if (user) {
-      res.status(201).send({
-        message: 'Регистрация успешна!',
-        user,
-      });
+      res.status(201).send({ message: 'Регистрация успешна!' });
     }
   } catch (error) {
     if (error.name === 'ValidationError') {

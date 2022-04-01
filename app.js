@@ -1,18 +1,25 @@
 require('dotenv').config();
+
 const express = require('express');
+const helmet = require('helmet');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
+const { errors } = require('celebrate');
 const router = require('./routes');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const cors = require('./middlewares/cors');
-const { PORT } = require('./utils/constants');
+const {
+  PORT,
+  MONGO_SERVER,
+} = require('./utils/constants');
 const { handleError } = require('./middlewares/handleError');
+const { limiter } = require('./utils/limiter');
 
 const app = express();
 
 const main = async () => {
   try {
-    await mongoose.connect('mongodb://localhost:27017/bitfilmsdb', {
+    await mongoose.connect(MONGO_SERVER, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
@@ -21,12 +28,15 @@ const main = async () => {
     throw new Error(`Сервер не запускается: ${error}`);
   }
 };
+
 main();
 
+app.use(limiter);
+app.use(helmet());
 app.use(cors);
 app.use(requestLogger);
 app.use(cookieParser());
 app.use(router);
 app.use(errorLogger);
-
+app.use(errors());
 app.use(handleError);
