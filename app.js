@@ -11,15 +11,19 @@ const cors = require('./middlewares/cors');
 const {
   PORT,
   MONGO_SERVER,
+  NODE_ENV,
+  MONGO_SERVER_DEV,
 } = require('./utils/constants');
 const { handleError } = require('./middlewares/handleError');
 const { limiter } = require('./utils/limiter');
 
 const app = express();
 
+const dbAddress = NODE_ENV === 'production' ? MONGO_SERVER : MONGO_SERVER_DEV;
+
 const main = async () => {
   try {
-    await mongoose.connect(MONGO_SERVER, {
+    await mongoose.connect(dbAddress, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });

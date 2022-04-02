@@ -2,7 +2,9 @@ const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 
 const SALT_ROUNDS = 10;
 
-const { PORT = 3000, MONGO_SERVER } = process.env;
+const { PORT = 3000, MONGO_SERVER, NODE_ENV } = process.env;
+
+const MONGO_SERVER_DEV = 'mongodb://localhost:27017/moviesdb-dev';
 
 const ALLOWED_CORS = [
   'https://mvxim.nomoredomains.work',
@@ -21,4 +23,6 @@ module.exports = {
   PORT,
   ALLOWED_CORS,
   MONGO_SERVER,
+  NODE_ENV,
+  MONGO_SERVER_DEV,
 };
