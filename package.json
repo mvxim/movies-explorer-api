@@ -1,0 +1,43 @@
+{
+  "author": {
+    "name": "Maxim Donika",
+    "email": "donika.maxim@gmail.com",
+    "url": "https://github.com/mvxim"
+  },
+  "name": "movies-explorer-api",
+  "description": "Бэкенд дипломного проекта. Управляет авторизацией. Сохраняет понравившиеся фильмы.",
+  "version": "0.1.0",
+  "homepage": ".",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+    "lint": "npx eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mvxim/movies-explorer-frontend"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "celebrate": "^15.0.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "express-rate-limit": "^6.3.0",
+    "express-winston": "^4.2.0",
+    "helmet": "^5.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.1",
+    "validator": "^13.7.0",
+    "winston": "^3.6.0"
+  }
+}
