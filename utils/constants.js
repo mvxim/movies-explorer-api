@@ -7,11 +7,11 @@ const { PORT = 3000, MONGO_SERVER, NODE_ENV } = process.env;
 const MONGO_SERVER_DEV = 'mongodb://localhost:27017/moviesdb-dev';
 
 const ALLOWED_CORS = [
-  'https://mvxim.nomoredomains.work',
-  'http://mvxim.nomoredomains.work',
-  'http://mvxim.nomoredomains.work/',
-  'https://mvxim.nomoredomains.work/',
-  'http://localhost:3001',
+  'http://localhost:3000',
+  'http://localhost:3000',
+  'https://localhost:3000',
+  'http://localhost:3000/',
+  'https://localhost:3001/',
   'https://localhost:3001',
   'http://localhost:3001/',
   'https://localhost:3001/',
