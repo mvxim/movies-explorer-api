@@ -6,7 +6,7 @@ const ForbiddenError = require('../errors/ForbiddenError');
 // GET, /movies
 const getSavedMovies = async (req, res, next) => {
   try {
-    const savedMovies = await Movie.find({}).populate(['owner']);
+    const savedMovies = await Movie.find({ owner: req.user._id }).populate(['owner']);
     if (!savedMovies) {
       throw new NotFoundError('Фильмов не нашлось :(');
     }
