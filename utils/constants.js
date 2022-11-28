@@ -11,10 +11,8 @@ const ALLOWED_CORS = [
   'https://localhost:3000',
   'http://localhost:3001',
   'https://localhost:3001',
-  'http://mvxim.nomoredomains.work',
-  'https://mvxim.nomoredomains.work',
-  'http://mvxim.nomoredomains.work/',
-  'https://mvxim.nomoredomains.work/',
+  'http://movies.dikiezveri.ru',
+  'https://movies.dikiezveri.ru',
 ];
 
 module.exports = {
